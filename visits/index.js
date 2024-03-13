@@ -8,8 +8,9 @@ client.set('visits', 0)
 
 app.get('/', (req, res) => {
   client.get('visits', (err, visits) => {
-    res.send('Number of visits is ' + visits)
-    client.set('visits', parseInt(visits + 1))
+    // get number of time the page has been visited
+    res.send('Number of visits is ' + visits) // send response back
+    client.set('visits', parseInt(visits + 1)) // update the number of time the page has been visited
   })
 })
 
